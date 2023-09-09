@@ -10,7 +10,9 @@ public class GuitarDTO {
 
     private Long id;
     private String manufacturerOfGuitar;
+    private String modelOfGuitar;
     private Integer yearOfProduction;
+    private Integer price;
     private StateOfGuitar stateOfGuitar;
     private TypeOfGuitar typeOfGuitar;
     private TypeOfMagnets typeOfMagnets;
@@ -26,7 +28,9 @@ public class GuitarDTO {
     public GuitarDTO(Guitar guitar){
         id = guitar.getId();
         manufacturerOfGuitar = guitar.getManufacturerOfGuitar();
+        modelOfGuitar = guitar.getModelOfGuitar();
         yearOfProduction = guitar.getYearOfProduction();
+        price = guitar.getPrice();
         stateOfGuitar = guitar.getStateOfGuitar();
         typeOfGuitar = guitar.getTypeOfGuitar();
         typeOfMagnets = guitar.getTypeOfMagnets();
@@ -105,5 +109,21 @@ public class GuitarDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getModelOfGuitar() {
+        return modelOfGuitar;
+    }
+
+    public void setModelOfGuitar(String modelOfGuitar) {
+        this.modelOfGuitar = modelOfGuitar;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }

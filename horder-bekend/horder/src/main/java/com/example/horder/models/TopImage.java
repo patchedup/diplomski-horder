@@ -1,0 +1,44 @@
+package com.example.horder.models;
+
+import com.example.horder.dtos.GuitarDTO;
+import jakarta.persistence.*;
+
+import java.sql.Blob;
+
+@Entity
+@Table(name = "image_table")
+public class TopImage {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column
+    private String urlPath;
+
+    @OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "guitar_id")
+    private Guitar guitar;
+
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUrlPath() {
+        return urlPath;
+    }
+
+    public void setUrlPath(String urlPath) {
+        this.urlPath = urlPath;
+    }
+
+    public Guitar getGuitar() {
+        return guitar;
+    }
+
+    public void setGuitar(Guitar guitar) {
+        this.guitar = guitar;
+    }
+}

@@ -1,4 +1,0 @@
--- Insert sample Guitar data
-insert into guitars (manufacturer_of_guitar, year_of_production, state_of_guitar, type_of_guitar, type_of_magnets, tuners, type_of_wood, description) values ('Fender', 2020, 'KAO_NOVO', 'ELEKTRICNA', 'HSS', 'Standard Tuners', 'Maple', 'A versatile electric guitar.');
-insert into guitars (manufacturer_of_guitar, year_of_production, state_of_guitar, type_of_guitar, type_of_magnets, tuners, type_of_wood, description) values  ('Gibson', 1995, 'DOBRO', 'ELEKTRICNA', 'SINGL_KOIL', 'Grover Rotomatics', 'Mahogany', 'Classic rock electric guitar.');
-insert into guitars (manufacturer_of_guitar, year_of_production, state_of_guitar, type_of_guitar, type_of_magnets, tuners, type_of_wood, description) values   ('Taylor', 2018, 'NOVO', 'AKUSTICNA', 'PIEZO', 'Taylor Chrome', 'Spruce', 'High-quality acoustic guitar.');

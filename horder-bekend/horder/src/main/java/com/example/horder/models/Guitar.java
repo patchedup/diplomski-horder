@@ -3,7 +3,12 @@ package com.example.horder.models;
 import com.example.horder.models.enums.StateOfGuitar;
 import com.example.horder.models.enums.TypeOfGuitar;
 import com.example.horder.models.enums.TypeOfMagnets;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "guitars")
@@ -16,7 +21,13 @@ public class Guitar {
     private String manufacturerOfGuitar;
 
     @Column
+    private String modelOfGuitar;
+
+    @Column
     private Integer yearOfProduction;
+
+    @Column
+    private Integer price;
 
     @Column
     @Enumerated(EnumType.STRING)
@@ -38,6 +49,11 @@ public class Guitar {
 
     @Column
     private String description;
+
+    @OneToMany(mappedBy = "guitar", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Image> images = new HashSet<Image>();
+
 
     public Long getId() {
         return id;
@@ -109,5 +125,29 @@ public class Guitar {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getModelOfGuitar() {
+        return modelOfGuitar;
+    }
+
+    public void setModelOfGuitar(String modelOfGuitar) {
+        this.modelOfGuitar = modelOfGuitar;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Set<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<Image> images) {
+        this.images = images;
     }
 }
